@@ -1,5 +1,409 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+background-image: var(--bg-image);
+background-position: center;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-color: var(--bg-color);
+color: var(--text-color, #f1b2ce);
+font-family: var(--font-family), sans-serif;
+font-size: var(--font-size);
+line-height: var(--line-height);
 }
+ 
+.header {
+  height: 100vh;
+  min-height: 668px;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  padding: var(--usualy-padding);
+  align-items: center;
+  justify-items: end;
+}
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.header__theme-menu-item {
+  color: var(--menu-color);
+  font-size: var(--font-size);
+  line-height: 18px;
+  text-align: center;
+}
+
+.header__theme-menu-button {
+  background: transparent;
+  padding: 3px 13px;
+  border: none;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--hover-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--menu-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-color);
+  pointer-events: none;
+}
+
+.icon__REC {
+  position: absolute;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  top: 2px;
+  right: 1px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: var(--usualy-padding);
+  padding-right: 19px;
+}
+
+.icon__REC::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  block-size: 9px;
+  inline-size: 9px;
+}
+
+.decorated-zone {
+  position: relative;
+  height: 100vh;
+  min-height: 668px;
+}
+
+.decorated-zone::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: var(--usualy-padding);
+  right: var(--usualy-padding);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--menu-color);
+  border-right: 1px solid var(--menu-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: var(--usualy-padding);
+  left: var(--usualy-padding);
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--menu-color);
+  border-left: 1px solid var(--menu-color);
+}
+
+.title {
+  text-shadow: 4px 4px 0 var(--accent-color);
+  color: var(--header-title-color);
+  font-size: var(--size-mobile);
+  font-weight: var(--title-weight);
+  line-height: 83%;
+}
+
+.header__title {
+  justify-self: start;
+}
+
+.header__subtitle {
+  background-color: var(--accent-color);
+  justify-self: end;
+  font-weight: var(--title-weight);
+  width: 100%;
+  align-self: center;
+}
+
+.title_decor {
+  color: var(--title-color);
+  background-color: var(--accent-color);
+  font-size: var(--font-size);
+}
+
+.main__content {
+  display: grid;
+  gap: var(--usualy-padding);
+  padding-left: var(--usualy-padding);
+  padding-right: var(--usualy-padding);
+  margin-top: 40px;
+}
+
+.section_title {
+  color: var(--menu-color);
+  font-size: var(--font-size);
+  font-weight: var(--title-weight);
+  line-height: var(--line-height);
+}
+
+.article_list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--usualy-padding) * 2);
+}
+
+.section {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.section_what {
+  display: grid;
+  gap: 20px;
+  padding-bottom: 40px;
+}
+
+.article_block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--usualy-padding);
+}
+
+.normal-weight {
+  font-weight: 400;
+}
+
+.section_images {
+  display: grid;
+  gap: var(--usualy-padding);
+  margin-top: 10px;
+}
+
+.images_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr,);
+  gap: 20px;
+}
+
+.images_container {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main__link {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--accent-color);
+}
+
+
+.main__link:hover {
+  border-bottom: 1px solid var(--link-color);
+  cursor: pointer;
+}
+
+.main__link:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.main__link:focus-visible {
+  text-decoration: none;
+  outline: 1px solid var(--link-color);
+}
+
+.footer {
+  display: grid;
+  position: relative;
+  height: 100vh;
+  min-height: 668px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-left: 0;
+    min-height: 1024px;
+  }
+
+.icon__REC {
+    top: 12px;
+    right: 12px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+ .header__theme-menu {
+    margin-top: 9px;
+    padding-right: var(--usualy-padding);
+  }
+
+  .header__theme-menu-list {
+    gap: 13px;
+}
+
+  .header__title {
+    font-size: var(--size-desktop);
+    margin-top: 4px;
+  }
+
+  .header__subtitle {
+    justify-self: end;
+    width: 364px;
+    margin-bottom: 13px;
+    margin-right: var(--usualy-padding);
+  }
+  
+  .main__content {
+    display: grid;
+    gap: var(--usualy-padding);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 19px;
+  }
+  
+  .section {
+    display: grid;
+    padding-bottom: 70px;
+  }
+  
+  .section__what {
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section_title {
+    max-width: 236px;
+  }
+  
+  .article_block {
+    grid-column: 2;
+  }
+
+  .section_images {
+    padding-bottom: 59px;
+  }
+
+  .images_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-template-areas: 
+    "title title title"
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street"
+  }
+
+  .images_container h2 {
+    grid-area: title;
+  }
+  .images_container .sunset {
+    grid-area: sunset;
+  }
+
+  .images_container .ice_cream {
+    grid-area: ice-cream;
+  }
+
+  .images_container .tape {
+    grid-area: tape;
+  }
+
+  .images_container .books {
+    grid-area: books;
+  }
+
+  .images_container .street {
+    grid-area: street;
+  }
+
+  .images_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .focus-decorated_zone {
+    margin-top: 3px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .header {
+    min-height: 768px;
+  }
+  
+  .title {
+    font-size: var(--size-desktop);
+  }
+  
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+    margin-top: 9px;
+    margin-left: 19px;
+  }
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+    list-style: none;
+  }
+  
+  .header__theme-menu-button {
+    margin: 0;
+    padding-bottom: 5px;
+  }
+  
+  .header__subtitle {
+    margin-top: 0px;
+    min-width: 491px;
+  }
+  
+  .header__title {
+    font-size: var(--size-desktop);
+    margin-top: 0px;
+  }
+
+  .article_list-text {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .section_title {
+    max-width: 315px;
+  }
+  
+  .section_images {
+    gap: 20px;
+  }
+  
+  .footer {
+    min-height: 768px;
+  }
+  
+  .focus_title {
+    padding-top: 10px;
+  }
+}
+
