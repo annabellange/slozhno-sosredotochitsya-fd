@@ -4,11 +4,11 @@
 */
   :root {
   --font-size: 18px;
-  --font-family: "IBM Plex Mono", sans-serif;
+  --font-family: "IBM Plex Mono", monospace;
   --text-color: #f1b2ce;
   --title-weight: 700;
   --header-title-color: #db00ff;
-  --bg-image: url("/images/cover-image-dark.png");
+  --bg-image: url("../images/cover-image-dark.png");
   --bg-color: #000028;
   --title-color: #000028;
   --line-height: 23.4px;

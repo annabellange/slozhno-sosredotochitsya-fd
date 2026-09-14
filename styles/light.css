@@ -7,7 +7,7 @@
 :root.theme-light {
   --text-color: #353430;
   --header-title-color: #FFC2E6;
-  --bg-image: url("/images/cover-image-light.png");
+  --bg-image: url("../images/cover-image-light.png");
   --bg-color:  #f1b2ce;
   --title-color: #000028;
   --accent-color: rgba(255, 141, 203, 1);
@@ -20,7 +20,7 @@
   :root {
   --text-color: #353430;
   --header-title-color: #FFC2E6;
-  --bg-image: url("/images/cover-image-light.png");
+  --bg-image: url("../images/cover-image-light.png");
   --bg-color:  #f1b2ce;
   --title-color: #000028;
   --accent-color: rgba(255, 141, 203, 1);
